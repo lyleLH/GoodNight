@@ -49,7 +49,7 @@ bot.on('contacts-updated', contacts => {
     }
 });
 
-new CronJob('00 25 17 * * *', function () {
+new CronJob('00 27 17 * * *', function () {
     if (username) {
         bot.sendMsg('早安', username)
             .catch(err => {
