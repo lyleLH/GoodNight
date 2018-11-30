@@ -42,14 +42,14 @@ bot.on('logout', () => {
 bot.on('contacts-updated', contacts => {
     if (!username) {
         console.log('联系人数量: ', Object.keys(bot.contacts).length);
-        if (bot.Contact.getSearchUser('文才').length) {
-            username = bot.Contact.getSearchUser('文才')[0].UserName;
+        if (bot.Contact.getSearchUser('Major Tom').length) {
+            username = bot.Contact.getSearchUser('Major Tom')[0].UserName;
             console.log('获取目标用户成功: ', username);
         }
     }
 });
 
-new CronJob('00 33 17 * * *', function () {
+new CronJob('00 30 09 * * *', function () {
     if (username) {
         bot.sendMsg('早安', username)
             .catch(err => {
