@@ -43,13 +43,13 @@ bot.on('contacts-updated', contacts => {
     if (!username) {
         // console.log('联系人数量: ', Object.keys(bot.contacts).length);
         if (bot.Contact.getSearchUser('世界第一可爱公主殿下').length) {
-            username = bot.Contact.getSearchUser('世界第一可爱公主殿下')[0].UserName;
+            username = bot.Contact.getSearchUser('文采')[0].UserName;
             console.log('获取目标用户成功: ', username);
         }
     }
 });
 
-new CronJob('00 30 09 * * *', function () {
+new CronJob('00 25 17 * * *', function () {
     if (username) {
         bot.sendMsg('早安', username)
             .catch(err => {
